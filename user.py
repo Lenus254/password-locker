@@ -30,9 +30,9 @@ class User:
         User.user_list.remove(self)  
 
     @classmethod
-    def find_by_user_name(cls, user_name):
+    def search_by_user_name(cls, user_name):
         '''
-        this is a function tha checks whether the username provided by the username is available and if it is it returns the account
+        this is a function tha checks whether the username provided exist and displays a searched user record
         '''
         for account in cls.user_accounts:
             if account.user_name == user_name:
