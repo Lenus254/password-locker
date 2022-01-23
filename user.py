@@ -20,3 +20,11 @@ class User:
         this is a save function that appends the account to the user_accounts array
         '''
         User.user_list.append(self)
+
+    def delete_user(self):
+
+        '''
+        delete_contact method deletes a saved user from the user_list
+        '''
+
+        User.user_list.remove(self)     

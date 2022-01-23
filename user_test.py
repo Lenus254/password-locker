@@ -39,15 +39,34 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user() # saving the new user
         self.assertEqual(len(User.user_list),1)
 
-    # def test_save_multiple_users(self):
-    #     '''
-    #     a test that checks whether both values appended to the array are actually present\ and returns the acount itself
-    #     '''
-    #     self.new_user.save_account()
-    #     test_userAc = User('er', 'ro', 'ro@ro', '234')
-    #     test_userAc.save_account()
-    #     self.assertEqual(len(User.user_list), 2)
+    def test_save_multiple_users(self):
+        '''
+        test function to acertain if one can save multiple users to user list
+        '''
+        self.new_user.save_user()
+        test_user_account = User('er', 'ro', 'ro@ro', '2345')
+        test_user_account.save_user()
+        self.assertEqual(len(User.user_list), 2)
 
+    def test_delete_user(self):
+        '''
+        test that check if the delete function works
+        '''
+        self.new_user.save_user()
+        test_user_account = User('er', 'ro', 'ro@ro', '2345')
+        test_user_account.save_user()
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)
+
+    def test_search_account_by_username(self):
+        '''
+        test to check whether the function used to find accounts really works
+        '''
+        self.new_user.save_user()
+        test_user_account = User('er', 'ro', 'ro@ro', '2345')
+        test_user_account.save_user()
+        found_user = User.search_by_user_name('ro@ro')
+        self.assertEqual(found_user.user_name, test_user_account.user_name)
 
 if __name__ == '__main__':
     unittest.main()
