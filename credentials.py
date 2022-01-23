@@ -3,6 +3,4 @@ class Credentials:
         self.site_name = site_name
         self.password = password
 
-    user_credentials = []
-
-class TestCredentials(unittest.TestCase):
+    
