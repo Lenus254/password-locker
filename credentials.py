@@ -4,3 +4,5 @@ class Credentials:
         self.password = password
 
     user_credentials = []
+
+class TestCredentials(unittest.TestCase):
