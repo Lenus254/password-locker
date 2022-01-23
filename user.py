@@ -43,8 +43,8 @@ class User:
         test to check if we can return a Boolean  true or false if we cannot find the contact.
         '''
 
-        self.new_contact.save_contact()
-        test_contact = Contact("Test","user","0711223344","test@user.com") # new contact
+        self.new_user.save_user()
+        test_user_account = User("Test","user","0711223344","test@user.com") # new user
         test_contact.save_contact()
 
         contact_exists = Contact.contact_exist("0711223344")
