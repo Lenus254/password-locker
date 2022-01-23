@@ -13,3 +13,10 @@ class User:
         self.last_name = last_name
         self.user_name = user_name
         self.password = password
+
+    
+    def save_user(self):
+        '''
+        this is a save function that appends the account to the user_accounts array
+        '''
+        User.user_list.append(self)
