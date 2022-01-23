@@ -5,3 +5,5 @@ class Credentials:
 
     def save_credentials(self):
         Credentials.user_credentials.append(self)
+
+    

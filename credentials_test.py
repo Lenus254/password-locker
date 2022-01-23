@@ -32,6 +32,15 @@ class TestCredentials(unittest.TestCase):
         self.new_credential.save_credentials()
         self.assertEqual(len(Credentials.user_credentials), 1)
 
+    def test_save_multiple(self):
+        '''
+        Test function to test whetther several credentials can be appended to credentials list
+        '''
+        self.new_credential.save_credentials()
+        test_credential = Credentials('facebook', '54321')
+        test_credential.save_credentials()
+        self.assertEqual(len(Credentials.user_credentials), 2)
+
 
 if __name__ == '__main__':
     unittest.main()
