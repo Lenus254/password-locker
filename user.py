@@ -38,15 +38,17 @@ class User:
             if user.user_name == user_name:
                 return user   
 
-    def test_user_exists(self):
+    @classmethod
+    def user_exist(cls,user_name):
         '''
-        test to check if we can return a Boolean  true or false if we cannot find the contact.
+        Method that checks if a user exists from the user list.
+        Args:
+            user_name:  to search if it exists
+        Returns :
+            Boolean: True or false depending if the user exists
         '''
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                    return True
 
-        self.new_user.save_user()
-        test_user_account = User("Test","user","0711223344","test@user.com") # new user
-        test_contact.save_contact()
-
-        contact_exists = Contact.contact_exist("0711223344")
-
-        self.assertTrue(contact_exists)
+        return False
