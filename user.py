@@ -34,6 +34,6 @@ class User:
         '''
         this is a function tha checks whether the username provided exist and displays a searched user record
         '''
-        for account in cls.user_accounts:
-            if account.user_name == user_name:
-                return account   
+        for user in cls.user_list:
+            if user.user_name == user_name:
+                return user   
