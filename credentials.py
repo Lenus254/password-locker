@@ -14,3 +14,9 @@ class Credentials:
     @classmethod
     def display_credentials(cls):
         return cls.user_credentials
+
+    @classmethod
+    def search_by_site(cls, site_name):
+        for site in cls.user_credentials:
+            if site.site_name == site_name:
+                return site

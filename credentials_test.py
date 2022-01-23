@@ -46,13 +46,23 @@ class TestCredentials(unittest.TestCase):
         checks whether delete function is working to remove credentials
         '''
         self.new_credential.save_credentials()
-        test_credential = Credentials('instagram', '54321')
+        test_credential = Credentials('facebook', '54321')
         test_credential.save_credentials()
         self.new_credential.delete_credentials()
         self.assertEqual(len(Credentials.user_credentials), 1)
 
     def test_display_credentials(self):
         self.assertEqual(Credentials.display_credentials(), Credentials.user_credentials)
+
+    def test_search_credential(self):
+        '''
+        this test checks whether saved credentials can be searched
+        '''
+        self.new_credential.save_credentials()
+        test_credential = Credentials('facebook', '54321')  # credential
+        test_credential.save_credentials()
+        found_credentials = Credentials.search_by_site('facebook')
+        self.assertEqual(found_credentials.site_name, test_credential.site_name)
 
 
 if __name__ == '__main__':
