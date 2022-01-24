@@ -41,7 +41,7 @@ def delete_credentials(credentials):
     credentials.delete_credentials()
 
 def main():
-    print('WELCOME TO PASSLOCK')
+    # print('WELCOME TO PASSLOCK')
     print('Use the following numbers to pick their corresponding values')
     while True:
 
