@@ -20,3 +20,10 @@ class Credentials:
         for site in cls.user_credentials:
             if site.site_name == site_name:
                 return site
+
+    @classmethod
+    def credential_exists(cls, site_name):
+        for site in cls.user_credentials:
+            if site.site_name == site_name:
+                return site
+        return False
