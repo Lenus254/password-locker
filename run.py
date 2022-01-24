@@ -54,10 +54,10 @@ def main():
     print('Select from letters below for corresponding actions:')
     while True:
 
-        print(" A) LOGIN \n B) CREATE ACCOUNT \n C) ABOUT SITE \n D) DISPLAY USERS \n E) LOGOUT")
+        print(" b) LOGIN \n a) CREATE ACCOUNT \n c) ABOUT SITE \n d) DISPLAY USERS \n e) LOGOUT")
 
         option = str(input())
-        if option == 'B':
+        if option == 'a':
             print('NEW ACCOUNT')
             print('-'*60)
 
@@ -78,7 +78,7 @@ def main():
             # create and save a new user
             print('User created succesfully')
             
-        elif option =='A':
+        elif option =='b':
             print('Enter username')
             username = input()
             print('Enter passoword')
@@ -89,7 +89,7 @@ def main():
                 print('User logged in ')
             else:
                 print('Invalid user credentials')
-                break
+                # break
                 
                 while True:
 
@@ -137,62 +137,16 @@ def main():
                     elif login_option == 4:
                         print('no credentials to display')
                         break
-            # while True:
-
-            #     print(
-            #         f'Welcome {user_name}, Use the following numbers to select their corresponding values')
-            #     print(
-            #         ' 1) Save new password \n 2) Delete password \n 3) Display saved passwords \n 4) Log out ')
-
-            #     log_choice = int(input())
-            #     if log_choice == 1:
-            #         print('New page')
-            #         print('*'*100)
-
-            #         print('Page name')
-            #         page = input()
-
-            #         print('password')
-            #         password = input()
-
-            #         # created and saved page
-            #         save_page(create_page(page, password))
-
-            #     elif log_choice == 2:
-            #         print("Enter the name of the page you want to delete")
-
-            #         page = input()
-            #         if isexist_page(page):
-            #             remove_page = (page)
-            #             delete_page(remove_page)
-
-            #         else:
-            #             print(f'I cant find {page}')
-
-            #     elif log_choice == 3:
-            #         if display_pages():
-            #             for pag in display_pages():
-            #                 print(
-            #                     f'{pag.page}:{pag.password}'
-            #                 )
-            #         else:
-            #             print('NO PASSWORD SAVED YET')
-
-            #     elif log_choice == 4:
-            #         break
-            
-            # else:
-            #     print('wrong credentials')
             
         
-        elif option == 'C':
+        elif option == 'c':
             print('ABOUT THE SITE')
             print(
                 '''
             Passlock is a terminal application that allows a user  credentials from different sites. In case of many sites like social media and others , passlock can be used to save different login credentials from the social media  accounts and other sites.Instead of having to gram credentials for all your sites so that you can remember  easily,you can use different login credentials and save them in passlock and only have to remember your passlock user account details only. This can prove to be very helpful especially  if you have many accounts.
                 ''')
 
-        elif option == 'D':
+        elif option == 'd':
             if display_users():
                 for user in display_users():
                     print(
@@ -201,7 +155,7 @@ def main():
             else:
                 print('NO ACCOUNTS')
 
-        elif option == 'E':
+        elif option == 'e':
             print('EXIT')
             break
 
